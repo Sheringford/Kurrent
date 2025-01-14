@@ -1,0 +1,195 @@
+/* Global Styles */
+body {
+    font-family: '18th_century_kurrent_textRg', sans-serif;
+    font-size: 48pt;
+    color: #333;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: '18th_century_kurrent_textRg';
+    src: url('18thctrkurtxt-webfont.woff2') format('woff2'),
+         url('18thctrkurtxt-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.container {
+    width: 80%; /* Increase width to ensure navbar fits */
+    margin: 0 auto;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+        "nav"
+        "content";
+    grid-gap: 0.4rem;
+}
+
+#content {
+    padding: 50px; /* Add margin inside the #content div */
+    font-size: 14pt;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+}
+
+#word, #sentence{
+    padding: 20px; /* Add margin inside the #content div */
+    margin: 5px
+}
+
+/* Navbar Styles */
+nav {
+    grid-area: nav;
+    text-align: center;
+    font-size: 14pt;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+}
+
+.navbar {
+    font-size: 13pt; /* Reduce font size slightly */
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap; /* Prevent wrapping to the next line */
+}
+.navbar li {
+    margin: 0 10px; /* Space between items */
+}
+
+.navbar a {
+    text-decoration: none;
+    font-size: 12pt;
+    padding: 8px 16px;
+    color: black;
+    display: block;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ababab;
+}
+
+/* Hover Underline Animation */
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+}
+
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Styles for devices with a max-width of 480px (small smartphones) */
+@media (max-width: 480px) {
+    body {
+        font-size: 10pt;
+    }
+
+    h1 {
+        font-size: 18pt;
+    }
+
+    h2 {
+        font-size: 14pt;
+    }
+
+    p {
+        font-size: 12pt;
+    }
+
+    nav {
+        font-size: 10pt;
+    }
+
+    .navbar a {
+        padding: 6px 12px;
+        font-size: 11pt;
+    }
+    .container {
+        width: 95%;
+    }
+}
+
+#load-sentence, #solution, #next-sentence, #load-word, #next-word{
+    background-color: #42a5f5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Open Sans", sans-serif;
+}
+
+#load-sentence:hover, #solution:hover, #next-sentence-hover, #load-word:hover, #next-word:hover{
+    background-color: #007bff;
+}
+
+#sentence {
+    margin-top: 10px;
+    font-size: 32pt;
+    color: #333;
+}
+
+#user-answer {
+    padding: 10px;
+    width: 80%;
+    font-size: 14px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: "Open Sans", sans-serif;
+}
+
+#submit-answer {
+    background-color: #42a5f5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Open Sans", sans-serif;
+}
+
+#submit-answer:hover {
+    background-color: #007bff;
+}
+
+#feedback {
+    font-size: 16px;
+    color: black; /* Default color */
+    margin-top: 3px;
+    font-family: "Open Sans", sans-serif;
+}
+
+#solution-section {
+    font-size: 16px;
+    color: black; /* Default color */
+    font-family: "Open Sans", sans-serif;
+}
