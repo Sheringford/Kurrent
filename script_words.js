@@ -71,7 +71,7 @@ submitButton.addEventListener('click', () => {
         feedback.style.color = 'red';
         // Show the "Solution" button
         solutionButton.style.display = 'block';
-        score -= 1;
+        score -= 6;
         feedback.innerText = 'Falsch! Dein aktueller Score ist: ' + score;
     }
 
