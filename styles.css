@@ -45,20 +45,25 @@ body {
 /* Navbar Styles */
 nav {
     grid-area: nav;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     font-size: 14pt;
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
+    width: 100%;
 }
 
 .navbar {
-    font-size: 13pt; /* Reduce font size slightly */
+    font-size: 13pt;
     padding: 0;
     list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap; /* Prevent wrapping to the next line */
+    margin: 0;
 }
 .navbar li {
     margin: 0 10px; /* Space between items */
@@ -133,7 +138,7 @@ nav {
     }
 }
 
-#load-sentence, #solution, #next-sentence, #load-word, #next-word{
+#load-sentence, #load-word, #load-trigram, #solution, #next-sentence, #next-word, #next-trigram, #next-sentence{
     background-color: #42a5f5;
     color: white;
     border: none;
@@ -145,7 +150,7 @@ nav {
     font-family: "Open Sans", sans-serif;
 }
 
-#load-sentence:hover, #solution:hover, #next-sentence-hover, #load-word:hover, #next-word:hover{
+#load-sentence:hover, #load-word:hover, #load-trigram:hover, #solution:hover, #next-sentence-hover, #next-word:hover, #next-trigram:hover{
     background-color: #007bff;
 }
 
@@ -165,7 +170,7 @@ nav {
     font-family: "Open Sans", sans-serif;
 }
 
-#submit-answer {
+#submit-answer-word, #submit-answer-trigram, #submit-answer-sentence {
     background-color: #42a5f5;
     color: white;
     border: none;
