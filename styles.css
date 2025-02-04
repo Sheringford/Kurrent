@@ -207,7 +207,7 @@ nav {
     margin-right: 10px; /* Space between the logo and nav items */
 }
 .logo img {
-    height: 70px; /* Adjust size as needed */
+    height: 50%; /* Adjust size as needed */
     width: auto;
     cursor: pointer; /* Makes it clear that it's clickable */
 }
