@@ -63,7 +63,7 @@ nav {
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap; /* Prevent wrapping to the next line */
-    margin: 0;
+    width: 100%;
 }
 .navbar li {
     margin: 0 10px; /* Space between items */
@@ -136,6 +136,9 @@ nav {
     .container {
         width: 95%;
     }
+    .logo img {
+        height: 40px; /* Adjust for smaller screens */
+    }
 }
 
 #load-sentence, #load-word, #load-trigram, #solution, #next-sentence, #next-word, #next-trigram, #next-sentence{
@@ -197,4 +200,14 @@ nav {
     font-size: 16px;
     color: black; /* Default color */
     font-family: "Open Sans", sans-serif;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Space between the logo and nav items */
+}
+.logo img {
+    height: 90px; /* Adjust size as needed */
+    width: auto;
+    cursor: pointer; /* Makes it clear that it's clickable */
 }
