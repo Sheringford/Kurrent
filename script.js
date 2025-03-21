@@ -84,7 +84,7 @@ function handleSubmit(input, feedbackElement, decrementScore) {
         feedbackElement.style.color = 'green';
         feedbackElement.innerText = `Richtig! Dein aktueller Score ist: ${score}`;
     } else {
-        feedbackElement.style.color = 'red';
+        feedbackElement.style.color = '#930707';
         updateScore(-decrementScore); // Reduce the score
         feedbackElement.innerText = `Falsch! Dein aktueller Score ist: ${score}`;
         solutionButton.style.display = 'block';
