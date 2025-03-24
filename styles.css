@@ -228,3 +228,14 @@ nav {
     width: auto;
     cursor: pointer; /* Makes it clear that it's clickable */
 }
+
+img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid #ccc;
+    width: 430px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
