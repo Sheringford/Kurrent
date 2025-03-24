@@ -233,9 +233,13 @@ img {
     background-size: cover;
     background-repeat: no-repeat;
     border: 1px solid #ccc;
-    width: 430px;
+    width: 500px;
     height: auto;
     margin-left: auto;
     margin-right: auto;
     display: block;
+}
+
+.illu {
+    margin-top: 100px;
 }
