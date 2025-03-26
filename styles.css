@@ -65,6 +65,20 @@ body {
     grid-gap: 0.2rem;
 }
 
+.container_about {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    height: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 1fr 0.2fr;
+    grid-template-areas:
+        "nav nav nav"
+        "about about about"
+        "about1 about2 about3";
+    grid-gap: 0.2rem;
+}
+
 .container_index a:visited {
     color: #333; /* Change this to any color you prefer for visited links */
 }
@@ -104,6 +118,38 @@ body {
 
 #content3 {
     grid-area: content3;
+}
+
+#about1, #about2, #about3 {
+    padding: 5px; /* You can reduce padding if it feels too large */
+    font-size: 14pt;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    display: flex;
+    justify-content: center; /* Optional: centers the content horizontally */
+    align-items: center; /* Optional: centers the content vertically */
+    height: auto; /* Ensure content blocks don't take up too much height */
+    width: auto;
+    text-decoration: none;
+}
+
+#about {
+    font-size: 14pt;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    grid-area: about;
+}
+
+#about1 {
+    grid-area: about1;
+}
+
+#about2 {
+    grid-area: about2;
+}
+
+#about3 {
+    grid-area: about3;
 }
 
 /* Navbar Styles */
@@ -285,11 +331,15 @@ img {
     background-size: cover;
     background-repeat: no-repeat;
     border: none;
-    width: 500px;
+    width: 200px;
     height: auto;
     margin-left: auto;
     margin-right: auto;
     display: block;
+}
+
+#virtuos.png {
+    width: 20px;
 }
 
 /* Styles for devices with a max-width of 480px (small smartphones) */
