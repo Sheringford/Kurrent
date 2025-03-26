@@ -27,6 +27,7 @@ body {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow */ 
     padding-left: 20px;
     padding-right: 20px;
+    margin: 5px
 }
 
 @font-face {
@@ -103,11 +104,6 @@ body {
 
 #content3 {
     grid-area: content3;
-}
-
-#word, #sentence{
-    padding: 20px; /* Add margin inside the #content div */
-    margin: 5px
 }
 
 /* Navbar Styles */
@@ -342,7 +338,17 @@ img {
             "content"
             "content2";
     }
-    .container, .container_unterseiten {
+    .container_index {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "nav"
+            "content"
+            "content1"
+            "content2"
+            "content3";
+    }
+    .container, .container_index {
         width: 90%;
     }
 
