@@ -1,38 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kurrent Lernen</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-        <nav class="navbar">
-            <a href="index.html" class="logo">
-                <img src="3.png" alt="Home" />
-            </a>
-            <ul>
-                <li class="hover-underline-animation"><a href="einfach.html">Einfach</a></li>
-                <li class="hover-underline-animation"><a href="fortgeschritten.html">Fortgeschritten</a></li>
-                <li class="hover-underline-animation"><a href="schwierig.html">Schwierig</a></li>	
-                <li class="hover-underline-animation"><a href="textübungen.html">Textübungen</a></li>	
-                <li class="hover-underline-animation"><a href="about.html">Über uns</a></li>	
-            </ul>			
-        </nav>
-    <div class="container">
-        <div>
-            <button id="load-word">Generiere eine Übungsaufgabe</button>
-            <p id="word"></p> <!-- Element to display the random word -->
-            <div id="answer-section" style="display: none;">
-                <input type="text" id="user-answer" placeholder="Schreibe deine Antwort hier">
-                <button id="submit-answer-word">Submit</button>
-                <p id="feedback"></p>
-                <button id="solution" style="margin-top: 5px; display: none;">Lösung</button>
-                <button id="next-word" style="margin-top: 5px; display: none;">Neue Aufgabe</button>
-                <p id="solution-section"></p>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Kurrent lernen</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/png" href="Thumbnail.png">
+    </head>    
+    <body>
+			<nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="oben_links.png" alt="Home" />
+                </a>
+				<ul>
+					<li class="hover-underline-animation"><a href="einfach.html">Einfach</a></li>
+					<li class="hover-underline-animation"><a href="fortgeschritten.html">Fortgeschritten</a></li>
+					<li class="hover-underline-animation"><a href="schwierig.html">Schwierig</a></li>	
+					<li class="hover-underline-animation"><a href="textübungen.html">Textübungen</a></li>	
+					<li class="hover-underline-animation"><a href="about.html">Über uns</a></li>	
+				</ul>			
+			</nav>
+        <div class="container">
+            <div>
+                <button id="load-word" onclick="showWord()">Generiere eine Übungsaufgabe</button>
+                <p id="word"></p>
+                <div id="answer-section" style="display: none;">
+                    <input type="text" id="user-answer" placeholder="Schreibe deine Antwort hier">
+                    <button id="submit-answer-word">Submit</button>
+                    <p id="feedback"></p>
+                    <button id="solution" style="margin-top: 5px; display: none;">Lösung</button>
+                    <button id="next-word" style="margin-top: 5px; display: none;">Neue Aufgabe</button>
+                    <p id="solution-section"></p>
+                </div>
             </div>
+            <script src="script.js"></script>
         </div>
-        <script src="script.js"></script>
-    </div>
-</body>
+    </body>
 </html>

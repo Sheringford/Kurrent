@@ -3,10 +3,30 @@ body {
     font-family: '18th_century_kurrent_textRg', sans-serif;
     font-size: 48pt;
     color: #333;
-    background-color: #f4f4f4;
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    background-image: url('Hintergrund.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.text {
+    background-color: white; /* White backdrop */
+    padding: 5px; /* Adds some spacing around the text */
+    display: inline-block; /* Ensures the background only covers the text */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow */
+}
+
+#word, #trigram, #sentence {
+    display: none;
+    background-color: white; /* White backdrop */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow */ 
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 @font-face {
@@ -18,7 +38,7 @@ body {
 }
 
 .container {
-    width: 80%; /* Increase width to ensure navbar fits */
+    width: 80%;
     margin: 0 auto;
     display: grid;
     height: 100vh;
@@ -31,16 +51,25 @@ body {
 }
 
 .container_index {
-    width: 80%; /* Increase width to ensure navbar fits */
+    width: 80%;
     margin: 0 auto;
     display: grid;
-    height: 100vh;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.2fr 3fr;
+    height: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 1fr 0.2fr;
     grid-template-areas:
-        "nav nav"
-        "content content2";
-    grid-gap: 0.4rem;
+        "nav nav nav"
+        "content content content"
+        "content1 content2 content3";
+    grid-gap: 0.2rem;
+}
+
+.container_index a:visited {
+    color: #333; /* Change this to any color you prefer for visited links */
+}
+
+.container_index a:hover {
+    color: #ababab;
 }
 
 #content {
@@ -48,6 +77,32 @@ body {
     font-size: 14pt;
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
+    grid-area: content;
+}
+
+#content1, #content2, #content3 {
+    padding: 50px; /* You can reduce padding if it feels too large */
+    font-size: 14pt;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    display: flex;
+    justify-content: center; /* Optional: centers the content horizontally */
+    align-items: center; /* Optional: centers the content vertically */
+    height: auto; /* Ensure content blocks don't take up too much height */
+    margin-top: -80px;
+    text-decoration: none;
+}
+
+#content1 {
+    grid-area: content1;
+}
+
+#content2 {
+    grid-area: content2;
+}
+
+#content3 {
+    grid-area: content3;
 }
 
 #word, #sentence{
@@ -66,7 +121,8 @@ nav {
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
     width: 100%;
-    border-bottom: 3px solid #930707;
+    border-bottom: 4px solid #930707;
+    background-color: white;
 }
 
 .navbar {
@@ -78,7 +134,7 @@ nav {
     align-items: center;
     flex-wrap: nowrap;
     width: 100vw;
-    border-bottom: 3px solid #930707;
+    border-bottom: 4px solid #930707;
     box-sizing: border-box;
     margin: 0;
 }
@@ -232,7 +288,7 @@ nav {
 img {
     background-size: cover;
     background-repeat: no-repeat;
-    border: 1px solid #ccc;
+    border: none;
     width: 500px;
     height: auto;
     margin-left: auto;
@@ -283,10 +339,8 @@ img {
         grid-template-rows: auto auto auto auto;
         grid-template-areas:
             "nav"
-            "content1"
-            "content2"
-            "content3"
-            "content4";
+            "content"
+            "content2";
     }
     .container, .container_unterseiten {
         width: 90%;
@@ -310,7 +364,7 @@ img {
         margin: 5px 0;
     }
 
-    #content2, #content3 {
+    #content2 {
         margin-top: 20px;
     }
 }

@@ -5,11 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Kurrent lernen</title>
         <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/png" href="Thumbnail.png">
     </head>    
     <body>
 			<nav class="navbar">
                 <a href="index.html" class="logo">
-                    <img src="3.png" alt="Home" />
+                    <img src="oben_links.png" alt="Home" />
                 </a>
 				<ul>
 					<li class="hover-underline-animation"><a href="einfach.html">Einfach</a></li>
@@ -21,7 +22,7 @@
 			</nav>
         <div class="container">
             <div>
-                <button id="load-sentence">Generiere eine Übungsaufgabe</button>
+                <button id="load-sentence" onclick="showSentence()">Generiere eine Übungsaufgabe</button>
                 <p id="sentence"></p>
                 <div id="answer-section" style="display: none;">
                     <input type="text" id="user-answer" placeholder="Schreibe deine Antwort hier">

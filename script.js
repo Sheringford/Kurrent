@@ -28,7 +28,7 @@ let score = parseInt(sessionStorage.getItem('userScore')) || 0;
 // Update the score and save it to sessionStorage
 function updateScore(increment) {
     score += increment;
-    sessionStorage.setItem('userScore', score); // Save the updated score to sessionStorage
+    sessionStorage.setItem('userScore', score);
     return score;
 }
 
@@ -52,7 +52,7 @@ function fetchRandomContent(pattern, element, scoreIncrement, button, displayCal
                 answerSection.style.display = 'block';
                 userAnswer.value = '';
                 feedback.innerText = '';
-                updateScore(scoreIncrement); // Add points for generating new content
+                updateScore(scoreIncrement);
                 displayCallback && displayCallback();
             } else {
                 element.innerText = 'No content found in the file.';
@@ -63,7 +63,7 @@ function fetchRandomContent(pattern, element, scoreIncrement, button, displayCal
             element.innerText = 'Failed to load content.';
         })
         .finally(() => {
-            button.style.display = 'none';
+            if (button) button.style.display = 'none';
         });
 }
 
@@ -85,7 +85,7 @@ function handleSubmit(input, feedbackElement, decrementScore) {
         feedbackElement.innerText = `Richtig! Dein aktueller Score ist: ${score}`;
     } else {
         feedbackElement.style.color = '#930707';
-        updateScore(-decrementScore); // Reduce the score
+        updateScore(-decrementScore);
         feedbackElement.innerText = `Falsch! Dein aktueller Score ist: ${score}`;
         solutionButton.style.display = 'block';
     }
@@ -134,8 +134,7 @@ nextSentenceButton?.addEventListener('click', () => {
 // Event listener for the Enter key on the input field
 userAnswer?.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-        event.preventDefault(); // Prevent the default behavior of the Enter key
-
+        event.preventDefault();
         if (wordElement?.innerText) {
             submitButtonWord.click();
         } else if (trigramElement?.innerText) {
@@ -145,3 +144,21 @@ userAnswer?.addEventListener('keydown', (event) => {
         }
     }
 });
+
+function showWord() {
+    fetchRandomContent(/\b\w+\b/g, wordElement, 5, loadButtonWord, () => {
+        wordElement.style.display = "inline-block";
+    });
+}
+
+function showTrigram() {
+    fetchRandomContent(/\b(?:\w+\s+){2}\w+\b/g, trigramElement, 50, loadButtonTrigram, () => {
+        trigramElement.style.display = "inline-block";
+    });
+}
+
+function showSentence() {
+    fetchRandomContent(/\b(?:\w+\s+){2}\w+\b/g, sentenceElement, 100, loadButtonSentence, () => {
+        sentenceElement.style.display = "inline-block";
+    });
+}
