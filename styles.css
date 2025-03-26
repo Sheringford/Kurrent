@@ -299,8 +299,7 @@ img {
         grid-template-rows: auto auto auto auto;
         grid-template-areas:
             "nav"
-            "content"
-            "content2";
+            "content";
     }
     .container_index {
         grid-template-columns: 1fr;
@@ -349,8 +348,7 @@ img {
         grid-template-rows: auto auto auto auto;
         grid-template-areas:
             "nav"
-            "content"
-            "content2";
+            "content";
     }
     .container_index {
         grid-template-columns: 1fr;
