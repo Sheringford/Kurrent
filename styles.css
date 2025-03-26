@@ -292,12 +292,26 @@ img {
     display: block;
 }
 
-.illu {
-    margin-top: 100px;
-}
-
 /* Styles for devices with a max-width of 480px (small smartphones) */
 @media (max-width: 480px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "nav"
+            "content"
+            "content2";
+    }
+    .container_index {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "nav"
+            "content"
+            "content1"
+            "content2"
+            "content3";
+    }
     body {
         font-size: 10pt;
     }
