@@ -109,7 +109,7 @@ nextWordButton.addEventListener('click', () => {
                 feedback.innerText = '';
                 solutionSection.style.display = 'none';
             } else {
-                WaveShaperNodeElement.innerText = 'No words found in the file.';
+                wordElement.innerText = 'No words found in the file.';
                 feedback.innerText = '';
             }
         })
