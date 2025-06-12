@@ -52,7 +52,7 @@ function fetchRandomContent(pattern, element, scoreIncrement, button, displayCal
                 answerSection.style.display = 'block';
                 userAnswer.value = '';
                 feedback.innerText = '';
-                updateScore(scoreIncrement);
+                // REMOVE THIS LINE: updateScore(scoreIncrement);
                 displayCallback && displayCallback();
             } else {
                 element.innerText = 'No content found in the file.';
@@ -81,11 +81,12 @@ loadButtonSentence?.addEventListener('click', () => {
 // Generalized submit handler
 function handleSubmit(input, feedbackElement, decrementScore) {
     if (input === current) {
+        updateScore(5); // Add points only for correct answers
         feedbackElement.style.color = 'green';
         feedbackElement.innerText = `Richtig! Dein aktueller Score ist: ${score}`;
     } else {
+        updateScore(-1); // Subtract points for wrong answers
         feedbackElement.style.color = '#930707';
-        updateScore(-decrementScore);
         feedbackElement.innerText = `Falsch! Dein aktueller Score ist: ${score}`;
         solutionButton.style.display = 'block';
     }
