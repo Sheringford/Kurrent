@@ -19,7 +19,6 @@ let score = 0;
 loadButtonWords.addEventListener('click', () => {
     // Hide the "Load Word" button
     loadButtonWords.style.display = 'none';
-    score += 5;
 
     fetch(filePath)
         .then(response => {
