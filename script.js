@@ -69,13 +69,13 @@ function fetchRandomContent(pattern, element, scoreIncrement, button, displayCal
 
 // Event listeners for load buttons
 loadButtonWord?.addEventListener('click', () => {
-    fetchRandomContent(/\b\w+\b/g, wordElement, 5, loadButtonWord);
+    fetchRandomContent(/\b\w+\b/g, wordElement, 0, loadButtonWord);
 });
 loadButtonTrigram?.addEventListener('click', () => {
-    fetchRandomContent(/\b(?:\w+\s+){2}\w+\b/g, trigramElement, 50, loadButtonTrigram);
+    fetchRandomContent(/\b(?:\w+\s+){2}\w+\b/g, trigramElement, 0, loadButtonTrigram);
 });
 loadButtonSentence?.addEventListener('click', () => {
-    fetchRandomContent(/[^.!?]+[.!?]+/g, sentenceElement, 100, loadButtonSentence);
+    fetchRandomContent(/[^.!?]+[.!?]+/g, sentenceElement, 0, loadButtonSentence);
 });
 
 // Generalized submit handler
