@@ -65,12 +65,13 @@ submitButton.addEventListener('click', () => {
     if (userInput === currentWord) {
         feedback.innerText = 'Richtig!';
         feedback.style.color = 'green';
+        score += 5;
         feedback.innerText = 'Richtig! Dein aktueller Score ist: ' + score;
     } else {
         feedback.style.color = 'red';
         // Show the "Solution" button
         solutionButton.style.display = 'block';
-        score -= 6;
+        score -= 1;
         feedback.innerText = 'Falsch! Dein aktueller Score ist: ' + score;
     }
 
@@ -91,7 +92,6 @@ solutionButton.addEventListener('click', () => {
 // Event listener for the "Next Word" button
 nextWordButton.addEventListener('click', () => {
     // Fetch a new random word
-    score += 5;
     fetch(filePath)
         .then(response => {
             if (!response.ok) {
